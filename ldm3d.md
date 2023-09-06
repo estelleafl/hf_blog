@@ -24,7 +24,7 @@ In order to capture both RGB and depth representations in the latent space, we m
 A frozen CLIP-text model is used to encode the text prompt and the embedding created from it is then integrated into the U-Net through cross-attention
 Finally, the modified KL-decoder decodes the denoised latent representation back to the pixel space as a RGBD output = (RGB, 16-bit grayscale depth map)
 
-![LDM3D architecture overview](blog/assets/model_overview.png)
+<img src="assets/model_overview.png" alt="LDM3D architecture overview" title="LDM3D architecture overview">
 
 ## Application
 
@@ -32,7 +32,7 @@ Finally, the modified KL-decoder decodes the denoised latent representation back
 
 - We developed an application called DepthFusion, which uses the image-to-image pipeline of LDM3D to create immersive and interactive 360-degree-view experiences using TouchDesigner. This technology has the potential to transform a wide range of industries, from entertainment and gaming to architecture and design.
  Here are [some examples](https://www.youtube.com/watch?v=6oS7gSQzFCI) of use of this application.
-![This QR code](blog/assets/model_overview.png) leads to an immersive experience demonstration. If accessed by computer, try and move the mouse around to get a 3D view. If accessed by phone, move around the space with the phone to experience the VR even more.
+[This QR code](assets/model_overview.png) leads to an immersive experience demonstration. If accessed by computer, try and move the mouse around to get a 3D view. If accessed by phone, move around the space with the phone to experience the VR even more.
 
 
 ## How to use
@@ -79,21 +79,14 @@ output.depth[0].save("lemon_ldm3d_depth.png")
 To date, we have released 3 checkpoints on Hugging Face:
 -        https://huggingface.co/Intel/ldm3d: original checkpoint used to report the results in our paper
 Example given the prompt: "A picture of some lemons on a table"
-![ldm3d](blog/assets/ldm3d_results.png)
+<img src="assets/ldm3d_results.png" alt="ldm3d outputs" title="LDM3D outputs">
+
 
 -        https://huggingface.co/Intel/ldm3d-4c: updated checkpoint using a 4-channels packaging. This checkpoint gives improved results
 Example given the prompt: "A picture of some lemons on a table"
-![ldm3d-4c](ldm3d_4c_results.png)
-
+<img src="assets/ldm3d_4c_results.png" alt="ldm3d-4c outputs" title="LDM3D-4c outputs">
 
 -        https://huggingface.co/Intel/ldm3d-pano: a checkpoint that was finetuned on panoramic images
 Example given the prompt: "360 view of a large bedroom"
-![ldm3d-pano](ldm3d_pano_results.png)
+=img src="assets/ldm3d_pano_results.png" alt="ldm3d-pano outputs" title="LDM3D-pano outputs">
 
-Here are the throughputs we got on Gaudi2, H100 and A100:
-
-| Device     | `dataloader_num_workers=0` | `dataloader_num_workers=1` | `dataloader_num_workers=2` |
-|:----------:|:--------------------------:|:--------------------------:|:--------------------------:|
-| Gaudi2 HPU | 601.5 samples/s            | 747.4 samples/s            | 768.7 samples/s            |
-| H100 GPU   | 336.5 samples/s            | 580.1 samples/s            | 602.1 samples/s            |
-| A100 GPU   | 227.5 samples/s            | 339.7 samples/s            | 345.4 samples/s            |
