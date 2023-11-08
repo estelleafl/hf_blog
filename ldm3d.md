@@ -26,11 +26,15 @@ In order to capture both RGB and depth representations in the latent space, we m
 A frozen CLIP-text model is used to encode the text prompt and the embedding created from it is then integrated into the U-Net through cross-attention
 Finally, the modified KL-decoder decodes the denoised latent representation back to the pixel space as a RGBD output = (RGB, 16-bit grayscale depth map)
 
-<img src="/blog/assets/model_overview.png" alt="LDM3D architecture overview" title="LDM3D architecture overview">
+<div class="flex justify-center">
+    <img src="https://huggingface.co/Intel/ldm3d/resolve/main/model_overview.png">
+</div>
+
+
 
 ## Application
 
--  A HuggingFace Space has been created to visualize panoramic images in a [360 view application](https://huggingface.co/spaces/Intel/ldm3d)
+-  A HuggingFace Space has been created to visualize panoramic images in a [360 view application](https://huggingface.co/spaces/Intel/ldm3d) using the LDM3D-pano checkpoint.
 
 - We developed an application called DepthFusion, which uses the image-to-image pipeline of LDM3D to create immersive and interactive 360-degree-view experiences using TouchDesigner. This technology has the potential to transform a wide range of industries, from entertainment and gaming to architecture and design.
  Here are [some examples](https://www.youtube.com/watch?v=6oS7gSQzFCI) of use of this application.
@@ -81,18 +85,21 @@ output.depth[0].save("lemon_ldm3d_depth.png")
 To date, we have released 2 LDM3D checkpoints on Hugging Face:
 -        https://huggingface.co/Intel/ldm3d: original checkpoint used to report the results in our paper
 Example given the prompt: "A picture of some lemons on a table"
-<img src="assets/ldm3d_results.png" alt="ldm3d outputs" title="LDM3D outputs">
-
+<div class="flex justify-center">
+    <img src="https://huggingface.co/Intel/ldm3d/resolve/main/ldm3d_results.png">
+</div>
 
 -        https://huggingface.co/Intel/ldm3d-4c: updated checkpoint using a 4-channels packaging. This checkpoint gives improved results
 Example given the prompt: "A picture of some lemons on a table"
-<img src="assets/ldm3d_4c_results.png" alt="ldm3d-4c outputs" title="LDM3D-4c outputs">
-
-
+<div class="flex justify-center">
+    <img src="https://huggingface.co/Intel/ldm3d-4c/resolve/main/ldm3d_4c_results.png">
+</div>
 We also released 2 checkpoints related to LDM3D-VR:
 -        https://huggingface.co/Intel/ldm3d-pano: a checkpoint that was finetuned on panoramic images
 Example given the prompt: "360 view of a large bedroom"
-<img src="assets/ldm3d_pano_results.png" alt="ldm3d-pano outputs" title="LDM3D-pano outputs">
+<div class="flex justify-center">
+    <img src="https://huggingface.co/Intel/ldm3d-pano/resolve/main/ldm3d_pano_results.png">
+</div>
 -        https://huggingface.co/Intel/ldm3d-sr: a checkpoint that upscales rgb and depth images.
 <img src="assets/ldm3d_sr_results.png" alt="ldm3d-sr outputs" title="LDM3D-sr outputs">
 
