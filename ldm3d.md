@@ -26,8 +26,8 @@ In order to capture both RGB and depth representations in the latent space, we m
 A frozen CLIP-text model is used to encode the text prompt and the embedding created from it is then integrated into the U-Net through cross-attention
 Finally, the modified KL-decoder decodes the denoised latent representation back to the pixel space as a RGBD output = (RGB, 16-bit grayscale depth map)
 
-<img src="assets/model_overview.png" alt="LDM3D architecture overview" title="LDM3D architecture overview">
- ![ldm3d_overview](assets/model_overview.png)
+<img src="/blog/assets/model_overview.png" alt="LDM3D architecture overview" title="LDM3D architecture overview">
+
 ## Application
 
 -  A HuggingFace Space has been created to visualize panoramic images in a [360 view application](https://huggingface.co/spaces/Intel/ldm3d)
