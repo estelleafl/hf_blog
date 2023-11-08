@@ -43,6 +43,7 @@ Finally, the modified KL-decoder decodes the denoised latent representation back
 
 ## How to use
 
+### On GPU/CPU using huggingface diffusers library
 Using the [diffusers library](https://github.com/huggingface/diffusers) from Hugging Face you can easily use our model on NVIDIA GPUS and on CPUs with just a few lines of code. In this section we detail how:
 
 
@@ -75,6 +76,7 @@ upscaled_rgb.save(f"upscaled_lemons_rgb.png")
 upscaled_depth.save(f"upscaled_lemons_depth.png")
 ```
 
+### On Habana Gaudi accelerator with the huggingface optimum habana library
 LDM3D is also implemented in the [optimum-habana library](https://github.com/huggingface/optimum-habana) from Hugging Face to use it with Habana Gaudi accelerators. Such implementation makes it really simple to use on a HPU device with a simple “import” from that library. You will be able to benefit from Gaudi’s performances and run LDM3D out of the box.
 [After installing the package](https://github.com/huggingface/optimum-habana#install), here is how to run inference:
 
