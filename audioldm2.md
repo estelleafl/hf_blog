@@ -7,8 +7,6 @@ authors:
 
 # AudioLDM 2, but faster ⚡️
 
-<!-- {blog_metadata} -->
-<!-- {authors} -->
 
 <a target="_blank" href="https://colab.research.google.com/github/sanchit-gandhi/notebooks/blob/main/AudioLDM-2.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
@@ -68,7 +66,7 @@ $$
 
 where the initial latent variable \\(\boldsymbol{z}_{0}\\) is drawn from a normal distribution \\(\mathcal{N} \left(\boldsymbol{0}, \boldsymbol{I} \right)\\). 
 The [UNet](https://huggingface.co/docs/diffusers/api/pipelines/audioldm2/AudioLDM2UNet2DConditionModel) of the LDM is unique in
-the sense that it takes **two** sets of cross-attention embeddings, \\(\tilde{\boldsymbol{E}}_{1:N}\\) from the GPT2 langauge model and \\(\boldsymbol{E}_{2}\\) 
+the sense that it takes **two** sets of cross-attention embeddings, \\(\tilde{\boldsymbol{E}}_{1:N}\\) from the GPT2 language model and \\(\boldsymbol{E}_{2}\\) 
 from Flan-T5, as opposed to one cross-attention conditioning as in most other LDMs.
 
 5. The final de-noised latents \\(\boldsymbol{z}_{T}\\) are passed to the VAE decoder to recover the Mel spectrogram \\(\boldsymbol{s}\\):

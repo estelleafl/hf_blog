@@ -14,8 +14,6 @@ authors:
 
 # Code Llama: Llama 2 learns to code
 
-<!-- {blog_metadata} -->
-<!-- {authors} -->
 
 ## Introduction
 
@@ -68,7 +66,7 @@ For the instruction model, they used two datasets: the instruction tuning datase
 
 ## How to use Code Llama?
 
-Code Llama is available in the Hugging Face ecosystem, starting with `transformers` version 4.33. Until `transformers` 4.33 is released, please install it from the main branch.
+Code Llama is available in the Hugging Face ecosystem, starting with `transformers` version 4.33.
 
 ### Demo
 
@@ -83,7 +81,7 @@ If you want to try out the bigger instruct-tuned 34B model, it is now available 
 
 ### Transformers
 
-With the upcoming release of `transformers` 4.33, you can use Code Llama and leverage all the tools within the HF ecosystem, such as:
+Starting with `transformers` 4.33, you can use Code Llama and leverage all the tools within the HF ecosystem, such as:
 
 - training and inference scripts and examples
 - safe file format (`safetensors`)
@@ -91,10 +89,8 @@ With the upcoming release of `transformers` 4.33, you can use Code Llama and le
 - utilities and helpers to run generation with the model
 - mechanisms to export the models to deploy
 
-Until `transformers` 4.33 is released, please install it from the main branch.
-
 ```bash
-!pip install git+https://github.com/huggingface/transformers.git@main accelerate
+!pip install --upgrade transformers
 ```
 #### A Note on dtypes
 
@@ -244,7 +240,7 @@ inputs = tokenizer(prompt, return_tensors="pt", add_special_tokens=False).to("cu
 system = "Provide answers in JavaScript"
 user = "Write a function that computes the set of sums of all contiguous sublists of a given list."
 
-prompt = f"<s><<SYS>>\\n{system}\\n<</SYS>>\\n\\n{user}"
+prompt = f"<s>[INST] <<SYS>>\\n{system}\\n<</SYS>>\\n\\n{user}[/INST]"
 inputs = tokenizer(prompt, return_tensors="pt", add_special_tokens=False).to("cuda")
 ```
 
@@ -261,7 +257,7 @@ answer_2 = "answer_2"
 user_3 = "user_prompt_3"
 
 prompt  = f"<<SYS>>\\n{system}\\n<</SYS>>\\n\\n{user_1}"
-prompt  = f"<s>[INST] {prompt.strip()} [/INST] {answer_1.strip()} </s>"
+prompt += f"<s>[INST] {prompt.strip()} [/INST] {answer_1.strip()} </s>"
 prompt += f"<s>[INST] {user_2.strip()} [/INST] {answer_2.strip()} </s>"
 prompt += f"<s>[INST] {user_3.strip()} [/INST]"
 

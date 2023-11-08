@@ -2,14 +2,12 @@
 title: "Snorkel AI x Hugging Face: unlock foundation models for enterprises"
 thumbnail: /blog/assets/78_ml_director_insights/snorkel.png
 authors:
-- user: VioletteLepercq
+- user: Violette
 ---
 
-<h1>Snorkel AI x Hugging Face: unlock foundation models for enterprises</h1>
+# Snorkel AI x Hugging Face: unlock foundation models for enterprises
 
 
-<!-- {blog_metadata} -->
-<!-- {authors} -->
 
 _This article is a cross-post from an originally published post on April 6, 2023 [in Snorkel's blog](https://snorkel.ai/snorkel-hugging-face-unlock-foundation-models-for-enterprise/), by Friea Berg ._
 
