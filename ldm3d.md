@@ -15,9 +15,12 @@ authors:
 
 LDM3D is Intel’s Generative AI model that generates image and its depth from text prompts. From it, immersive 360 environments can be created. It is the first-ever custom diffusion model with large-scale training done on Intel AI Supercomputing Cluster powered by Intel Xeon and Habana Gaudi accelerators.
 LDM3D leverages Stable Diffusion 1.5 training and generates both image and depth map data from a given text prompt, allowing users to generate RGBD images from text prompts.
- It was finetuned on a dataset constructed from a subset of the LAION-400M dataset, a large-scale image-caption dataset that contains over 400 million image-caption pairs. For more details on the training procedure, you can refer to our [paper](https://arxiv.org/abs/2305.10853).
+ It was finetuned on a dataset constructed from a subset of the LAION-400M dataset, a large-scale image-caption dataset that contains over 400 million image-caption pairs. For more details on the training procedure, you can refer to our [paper](https://arxiv.org/abs/2305.10853)
 
-In this blog, we will review the model and how to use it on Habana Gaudi and on NVIDIA GPU with [Diffusers](https://github.com/huggingface/diffusers) and [Optimum](https://github.com/huggingface/optimum).
+ We also developed an extension to LDM3D: LDM3D-VR, a suite of diffusion models targeting virtual reality development that includes LDM3D-pano and LDM3D-SR. These models enable the generation of panoramic RGBD based on textual prompts and the upscaling of low-resolution inputs to high-resolution RGBD, respectively. Our models are fine-tuned from existing pretrained models on datasets containing panoramic/high-resolution RGB images, depth maps and captions. You can refer to our [paper](https://arxiv.org/pdf/2311.03226) for more details.
+
+
+In this blog, we will review these models and how to use some of them on Habana Gaudi and on NVIDIA GPU with [Diffusers](https://github.com/huggingface/diffusers) and [Optimum](https://github.com/huggingface/optimum).
 
 ## LDM3D
 In order to capture both RGB and depth representations in the latent space, we modified the KL-autoencoder. The KL-encoder now takes as input a RGBD image to create a latent representation of both RGB and depth. After having added noise to this latent, the U-Net will play its role of iteratively denoising it.
@@ -76,7 +79,7 @@ output.depth[0].save("lemon_ldm3d_depth.png")
 ```
 
 
-To date, we have released 3 checkpoints on Hugging Face:
+To date, we have released 2 LDM3D checkpoints on Hugging Face:
 -        https://huggingface.co/Intel/ldm3d: original checkpoint used to report the results in our paper
 Example given the prompt: "A picture of some lemons on a table"
 <img src="assets/ldm3d_results.png" alt="ldm3d outputs" title="LDM3D outputs">
@@ -86,7 +89,11 @@ Example given the prompt: "A picture of some lemons on a table"
 Example given the prompt: "A picture of some lemons on a table"
 <img src="assets/ldm3d_4c_results.png" alt="ldm3d-4c outputs" title="LDM3D-4c outputs">
 
+
+We also released 2 checkpoints related to LDM3D-VR:
 -        https://huggingface.co/Intel/ldm3d-pano: a checkpoint that was finetuned on panoramic images
 Example given the prompt: "360 view of a large bedroom"
-=img src="assets/ldm3d_pano_results.png" alt="ldm3d-pano outputs" title="LDM3D-pano outputs">
+<img src="assets/ldm3d_pano_results.png" alt="ldm3d-pano outputs" title="LDM3D-pano outputs">
+-        https://huggingface.co/Intel/ldm3d-sr: a checkpoint that upscales rgb and depth images.
+<img src="assets/ldm3d_sr_results.png" alt="ldm3d-sr outputs" title="LDM3D-sr outputs">
 
