@@ -58,18 +58,6 @@ output.depth[0].save("lemon_ldm3d_depth.png")
 ```
 In this example above, you can switch to ldm3d and ldm3d-pano by just updating the model name
 
-
-```bash
-from diffusers import StableDiffusionLDM3DPipeline
-model_name = "Intel/ldm3d-4c"
-pipe = StableDiffusionLDM3DPipeline.from_pretrained(model_name)
-pipe.to("cuda")
-prompt = "A picture of some lemons on a table"
-output = pipe( prompt,  width=1024, height=512, guidance_scale=7.0, num_inference_steps=50 )
-output.rgb[0].save("lemon_ldm3d_rgb.jpg")
-output.depth[0].save("lemon_ldm3d_depth.png")
-```
-
 ```bash
 from PIL import Image
 from diffusers import StableDiffusionUpscaleLDM3DPipeline
