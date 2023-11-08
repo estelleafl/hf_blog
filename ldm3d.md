@@ -19,7 +19,7 @@ LDM3D leverages Stable Diffusion 1.5 training and generates both image and depth
  We also developed an extension to LDM3D: LDM3D-VR, a suite of diffusion models targeting virtual reality development that includes LDM3D-pano and LDM3D-SR. These models enable the generation of panoramic RGBD based on textual prompts and the upscaling of low-resolution inputs to high-resolution RGBD, respectively. Our models are fine-tuned from existing pretrained models on datasets containing panoramic/high-resolution RGB images, depth maps and captions. You can refer to our [paper](https://arxiv.org/pdf/2311.03226) for more details.
 
 
-In this blog, we will review these models and how to use some of them on Habana Gaudi and on NVIDIA GPU with [Diffusers](https://github.com/huggingface/diffusers) and [Optimum](https://github.com/huggingface/optimum).
+In this blog, we will review these models and how to use them on Habana Gaudi and on NVIDIA GPU with [Diffusers](https://github.com/huggingface/diffusers) and [Optimum](https://github.com/huggingface/optimum).
 
 ## LDM3D
 In order to capture both RGB and depth representations in the latent space, we modified the KL-autoencoder. The KL-encoder now takes as input a RGBD image to create a latent representation of both RGB and depth. After having added noise to this latent, the U-Net will play its role of iteratively denoising it.
