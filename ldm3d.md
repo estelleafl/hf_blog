@@ -32,7 +32,7 @@ Finally, the modified KL-decoder decodes the denoised latent representation back
 
 ## LDM3D-VR
 
-## Application
+## Applications
 
 -  A HuggingFace Space has been created to visualize panoramic images in a [360 view application](https://huggingface.co/spaces/Intel/ldm3d) using the LDM3D-pano checkpoint.
 
