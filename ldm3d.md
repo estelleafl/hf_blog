@@ -121,5 +121,10 @@ Example given the prompt: "360 view of a large bedroom"
     <img src="https://huggingface.co/Intel/ldm3d-pano/resolve/main/ldm3d_pano_results.png">
 </div>
 -        https://huggingface.co/Intel/ldm3d-sr: a checkpoint that upscales rgb and depth images.
-<img src="assets/ldm3d_sr_results.png" alt="ldm3d-sr outputs" title="LDM3D-sr outputs">
+<div class="flex justify-center">
+    <img src="https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d_sr_rgb_results.png">
+</div>
+<div class="flex justify-center">
+    <img src="https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d_sr_depth_results.png">
+</div>
 
