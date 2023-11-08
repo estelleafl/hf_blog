@@ -30,7 +30,7 @@ Finally, the modified KL-decoder decodes the denoised latent representation back
     <img src="https://huggingface.co/Intel/ldm3d/resolve/main/model_overview.png">
 </div>
 
-
+## LDM3D-VR
 
 ## Application
 
@@ -56,7 +56,36 @@ output = pipe( prompt,  width=1024, height=512, guidance_scale=7.0, num_inferenc
 output.rgb[0].save("lemon_ldm3d_rgb.jpg")
 output.depth[0].save("lemon_ldm3d_depth.png")
 ```
+In this example above, you can switch to ldm3d and ldm3d-pano by just updating the model name
 
+
+```bash
+from diffusers import StableDiffusionLDM3DPipeline
+model_name = "Intel/ldm3d-4c"
+pipe = StableDiffusionLDM3DPipeline.from_pretrained(model_name)
+pipe.to("cuda")
+prompt = "A picture of some lemons on a table"
+output = pipe( prompt,  width=1024, height=512, guidance_scale=7.0, num_inference_steps=50 )
+output.rgb[0].save("lemon_ldm3d_rgb.jpg")
+output.depth[0].save("lemon_ldm3d_depth.png")
+```
+
+```bash
+from PIL import Image
+from diffusers import StableDiffusionUpscaleLDM3DPipeline
+
+#Upscale the rgb and depth to a resolution of (1024, 1024)
+pipe_ldm3d_upscale = StableDiffusionUpscaleLDM3DPipeline.from_pretrained("Intel/ldm3d-sr")
+pipe_ldm3d_upscale.to("cuda")
+
+low_res_img = Image.open(f"lemons_ldm3d_rgb.jpg").convert("RGB")
+low_res_depth = Image.open(f"lemons_ldm3d_depth.png").convert("L")
+outputs = pipe_ldm3d_upscale(prompt="high quality high resolution uhd 4k image", rgb=low_res_img, depth=low_res_depth, num_inference_steps=50, target_res=[1024, 1024])
+
+upscaled_rgb, upscaled_depth =outputs.rgb[0], outputs.depth[0]
+upscaled_rgb.save(f"upscaled_lemons_rgb.png")
+upscaled_depth.save(f"upscaled_lemons_depth.png")
+```
 
 LDM3D is also implemented in the [optimum-habana library](https://github.com/huggingface/optimum-habana) from Hugging Face to use it with Habana Gaudi accelerators. Such implementation makes it really simple to use on a HPU device with a simple “import” from that library. You will be able to benefit from Gaudi’s performances and run LDM3D out of the box.
 [After installing the package](https://github.com/huggingface/optimum-habana#install), here is how to run inference:
@@ -94,6 +123,7 @@ Example given the prompt: "A picture of some lemons on a table"
 <div class="flex justify-center">
     <img src="https://huggingface.co/Intel/ldm3d-4c/resolve/main/ldm3d_4c_results.png">
 </div>
+
 We also released 2 checkpoints related to LDM3D-VR:
 -        https://huggingface.co/Intel/ldm3d-pano: a checkpoint that was finetuned on panoramic images
 Example given the prompt: "360 view of a large bedroom"
