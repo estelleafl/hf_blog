@@ -106,27 +106,29 @@ output.depth[0].save("lemon_ldm3d_depth.png")
 ```
 
 
-To date, we have released 2 LDM3D checkpoints on Hugging Face:
--        https://huggingface.co/Intel/ldm3d: original checkpoint used to report the results in our paper
+To date, we have released the original LDM3D checkpoint on Hugging Face:
+-        [ldm3d original](https://huggingface.co/Intel/ldm3d): original checkpoint used to report the results in our paper
 Example given the prompt: "A picture of some lemons on a table"
 <div class="flex justify-center">
     <img src="https://huggingface.co/Intel/ldm3d/resolve/main/ldm3d_results.png" width="400">
 </div>
 
--        https://huggingface.co/Intel/ldm3d-4c: updated checkpoint using a 4-channels packaging. This checkpoint gives improved results
+
+
+We also released 3 checkpoints related to LDM3D-VR:
+-        [ldm3d-4c](https://huggingface.co/Intel/ldm3d-4c): updated checkpoint using a 4-channels packaging. This checkpoint gives improved results
 Example given the prompt: "A picture of some lemons on a table"
 <div class="flex justify-center">
     <img src="https://huggingface.co/Intel/ldm3d-4c/resolve/main/ldm3d_4c_results.png" width="400">
 </div>
 
-We also released 2 checkpoints related to LDM3D-VR:
--        https://huggingface.co/Intel/ldm3d-pano: a checkpoint that was finetuned on panoramic images
+-        [ldm3d-pano](https://huggingface.co/Intel/ldm3d-pano): a checkpoint that was finetuned on panoramic images
 Example given the prompt: "360 view of a large bedroom"
 <div class="flex justify-center">
 		<img src="https://huggingface.co/Intel/ldm3d-pano/resolve/main/ldm3d_pano_results.png" width="700">
 </div>
 
--        https://huggingface.co/Intel/ldm3d-sr: a checkpoint that upscales rgb and depth images.
+-        [ldm3d-sr](https://huggingface.co/Intel/ldm3d-sr): a checkpoint that upscales rgb and depth images.
 
 
 RGB upscaling           |  Depth upscaling
