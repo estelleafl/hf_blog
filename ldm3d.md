@@ -115,17 +115,17 @@ Example given the prompt: "A picture of some lemons on a table"
 
 -        https://huggingface.co/Intel/ldm3d-4c: updated checkpoint using a 4-channels packaging. This checkpoint gives improved results
 Example given the prompt: "A picture of some lemons on a table"
+<p align="center">
 <div class="flex justify-center">
     <img src="https://huggingface.co/Intel/ldm3d-4c/resolve/main/ldm3d_4c_results.png" width="400">
 </div>
+</p>
 
 We also released 2 checkpoints related to LDM3D-VR:
 -        https://huggingface.co/Intel/ldm3d-pano: a checkpoint that was finetuned on panoramic images
 Example given the prompt: "360 view of a large bedroom"
 <div class="flex justify-center">
-    <div style="text-align:center">
 		<img src="https://huggingface.co/Intel/ldm3d-pano/resolve/main/ldm3d_pano_results.png" width="700">
-	</div>	
 </div>
 
 -        https://huggingface.co/Intel/ldm3d-sr: a checkpoint that upscales rgb and depth images.
