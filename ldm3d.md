@@ -110,27 +110,27 @@ To date, we have released 2 LDM3D checkpoints on Hugging Face:
 -        https://huggingface.co/Intel/ldm3d: original checkpoint used to report the results in our paper
 Example given the prompt: "A picture of some lemons on a table"
 <div class="flex justify-center">
-    <img src="https://huggingface.co/Intel/ldm3d/resolve/main/ldm3d_results.png",width="400">
+    <img src="https://huggingface.co/Intel/ldm3d/resolve/main/ldm3d_results.png",width="100">
 </div>
 
 -        https://huggingface.co/Intel/ldm3d-4c: updated checkpoint using a 4-channels packaging. This checkpoint gives improved results
 Example given the prompt: "A picture of some lemons on a table"
 <div class="flex justify-center">
-    <img src="https://huggingface.co/Intel/ldm3d-4c/resolve/main/ldm3d_4c_results.png",width="400">
+    <img src="https://huggingface.co/Intel/ldm3d-4c/resolve/main/ldm3d_4c_results.png",width="100">
 </div>
 
 We also released 2 checkpoints related to LDM3D-VR:
 -        https://huggingface.co/Intel/ldm3d-pano: a checkpoint that was finetuned on panoramic images
 Example given the prompt: "360 view of a large bedroom"
 <div class="flex justify-center">
-    <img src="https://huggingface.co/Intel/ldm3d-pano/resolve/main/ldm3d_pano_results.png",width="400">
+    <img src="https://huggingface.co/Intel/ldm3d-pano/resolve/main/ldm3d_pano_results.png",width="100">
 </div>
 
 -        https://huggingface.co/Intel/ldm3d-sr: a checkpoint that upscales rgb and depth images.
 <div class="flex justify-center">
-    <img src="https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d_sr_rgb_results.png",width="400">
+    <img src="https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d_sr_rgb_results.png",width="100">
 </div>
 <div class="flex justify-center">
-    <img src="https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d_sr_depth_results.png",width="400">
+    <img src="https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d_sr_depth_results.png",width="100">
 </div>
 
