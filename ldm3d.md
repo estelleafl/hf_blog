@@ -27,7 +27,7 @@ A frozen CLIP-text model is used to encode the text prompt and the embedding cre
 Finally, the modified KL-decoder decodes the denoised latent representation back to the pixel space as a RGBD output = (RGB, 16-bit grayscale depth map)
 
 <div class="flex justify-center">
-    <img src="https://huggingface.co/Intel/ldm3d/resolve/main/model_overview.png">
+    <img src="https://huggingface.co/Intel/ldm3d/resolve/main/model_overview.png" width="600">
 </div>
 
 ## LDM3D-VR
@@ -37,7 +37,7 @@ Finally, the modified KL-decoder decodes the denoised latent representation back
  - [ldm3d-pano](https://huggingface.co/Intel/ldm3d-pano) further finetunes the previous [ldm3d-4c](https://huggingface.co/Intel/ldm3d-4c) checkpoint on panoramic image datasets to generate better panoramas.
  - [ldm3d-sr](https://huggingface.co/Intel/ldm3d-sr) performs x4 upscaling and recovers high-resolution RGB and depth maps from low-resolution panorama inputs.
  <div class="flex justify-center">
-    <img src="https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d-sr-overview.png">
+    <img src="https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d-sr-overview.png" width="600">
 </div>
 
 
