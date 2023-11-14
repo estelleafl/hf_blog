@@ -123,7 +123,9 @@ We also released 2 checkpoints related to LDM3D-VR:
 -        https://huggingface.co/Intel/ldm3d-pano: a checkpoint that was finetuned on panoramic images
 Example given the prompt: "360 view of a large bedroom"
 <div class="flex justify-center">
-    <img src="https://huggingface.co/Intel/ldm3d-pano/resolve/main/ldm3d_pano_results.png" width="700">
+    <div style="text-align:center">
+		<img src="https://huggingface.co/Intel/ldm3d-pano/resolve/main/ldm3d_pano_results.png" width="700">
+	</div>	
 </div>
 
 -        https://huggingface.co/Intel/ldm3d-sr: a checkpoint that upscales rgb and depth images.
