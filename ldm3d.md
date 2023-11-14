@@ -127,6 +127,13 @@ Example given the prompt: "360 view of a large bedroom"
 </div>
 
 -        https://huggingface.co/Intel/ldm3d-sr: a checkpoint that upscales rgb and depth images.
+
+
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d_sr_rgb_results.png)  |  ![](https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d_sr_depth_results.png)
+
+
 <div class="flex justify-center">
     <img src="https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d_sr_rgb_results.png" width="500">
 </div>
