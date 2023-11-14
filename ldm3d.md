@@ -36,6 +36,10 @@ Finally, the modified KL-decoder decodes the denoised latent representation back
 
  - [ldm3d-pano](https://huggingface.co/Intel/ldm3d-pano) further finetunes the previous [ldm3d-4c](https://huggingface.co/Intel/ldm3d-4c) checkpoint on panoramic image datasets to generate better panoramas.
  - [ldm3d-sr](https://huggingface.co/Intel/ldm3d-sr) performs x4 upscaling and recovers high-resolution RGB and depth maps from low-resolution panorama inputs.
+ <div class="flex justify-center">
+    <img src="https://huggingface.co/Intel/ldm3d-sr/resolve/main/ldm3d-sr-overview.png">
+</div>
+
 
 ## Applications
 
