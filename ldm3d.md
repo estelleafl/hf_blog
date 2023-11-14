@@ -32,9 +32,14 @@ Finally, the modified KL-decoder decodes the denoised latent representation back
 
 ## LDM3D-VR
 
+ LDM3D-VR is a suite of diffusion models targeting virtual reality development. These models enable the generation of panoramic RGBD based on textual prompts and the upscaling of low-resolution inputs to high-resolution RGBD. The models included in LDM3D-VR are:
+
+ - [ldm3d-pano](https://huggingface.co/Intel/ldm3d-pano) further finetunes the previous [ldm3d-4c](https://huggingface.co/Intel/ldm3d-4c) checkpoint on panoramic image datasets to generate better panoramas.
+ - [ldm3d-sr](https://huggingface.co/Intel/ldm3d-sr) performs x4 upscaling and recovers high-resolution RGB and depth maps from low-resolution panorama inputs.
+
 ## Applications
 
--  A HuggingFace Space has been created to visualize panoramic images in a [360 view application](https://huggingface.co/spaces/Intel/ldm3d) using the LDM3D-pano checkpoint.
+-  A Hugging Face Space has been created to visualize panoramic images in a [360 view application](https://huggingface.co/spaces/Intel/ldm3d) using the LDM3D-pano checkpoint.
 
 - We developed an application called DepthFusion, which uses the image-to-image pipeline of LDM3D to create immersive and interactive 360-degree-view experiences using TouchDesigner. This technology has the potential to transform a wide range of industries, from entertainment and gaming to architecture and design.
  Here are [some examples](https://www.youtube.com/watch?v=6oS7gSQzFCI) of use of this application.
@@ -43,8 +48,8 @@ Finally, the modified KL-decoder decodes the denoised latent representation back
 
 ## How to use
 
-### On GPU/CPU using huggingface diffusers library
-Using the [diffusers library](https://github.com/huggingface/diffusers) from Hugging Face you can easily use our model on NVIDIA GPUS and on CPUs with just a few lines of code. In this section we detail how:
+### On GPU/CPU using Hugging Face Diffusers library
+Using the [diffusers library](https://github.com/huggingface/diffusers) from Hugging Face you can easily use our model on NVIDIA GPUS and on CPUs with just a few lines of code. In this section we detail how.
 
 
 ```bash
@@ -76,7 +81,7 @@ upscaled_rgb.save(f"upscaled_lemons_rgb.png")
 upscaled_depth.save(f"upscaled_lemons_depth.png")
 ```
 
-### On Habana Gaudi accelerator with the huggingface optimum habana library
+### On Habana Gaudi accelerator with the Hugging Face Optimum Habana library
 LDM3D is also implemented in the [optimum-habana library](https://github.com/huggingface/optimum-habana) from Hugging Face to use it with Habana Gaudi accelerators. Such implementation makes it really simple to use on a HPU device with a simple “import” from that library. You will be able to benefit from Gaudi’s performances and run LDM3D out of the box.
 [After installing the package](https://github.com/huggingface/optimum-habana#install), here is how to run inference:
 
