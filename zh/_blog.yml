@@ -989,6 +989,19 @@
     - diffusers
     - diffusion
 
+- local: overview-quantization-transformers
+  title: "🤗 Transformers 中原生支持的量化方案概述"
+  author: ybelkada
+  thumbnail: /blog/assets/163_overview_quantization_transformers/thumbnail.jpg
+  date: September 12, 2023
+  tags:
+    - llm
+    - optimization
+    - quantization
+    - comparison
+    - bitsandbytes
+    - gptq
+
 - local: optimize-llm
   title: "面向生产的 LLM 优化"
   author: patrickvonplaten
@@ -1020,6 +1033,29 @@
     - LLM
     - nlp
     - community
+
+
+- local: the_n_implementation_details_of_rlhf_with_ppo
+  title: "使用 PPO 算法进行 RLHF 的 N 步实现细节"
+  author: vwxyzjn
+  thumbnail: /blog/assets/167_the_n_implementation_details_of_rlhf_with_ppo/thumbnail.png
+  date: October 24, 2023
+  tags:
+    - research
+    - rl
+    - rlhf
+
+- local: personal-copilot
+  title: "个人编程助手：训练你自己的编码助手"
+  author: smangrul
+  thumbnail: /blog/assets/170_personal_copilot/thumbnail.png
+  date: October 27, 2023
+  tags:
+    - bigcode
+    - llm
+    - nlp
+    - inference
+    - guide
 
 - local: regions
   title: "HF Hub 现已加入存储区域功能"
